@@ -10,11 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_18_181530) do
+ActiveRecord::Schema.define(version: 2019_07_20_202354) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "answers", force: :cascade do |t|
     t.string "answer", null: false
-    t.integer "answer_id"
+    t.integer "question_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "correct", default: false
@@ -28,7 +31,7 @@ ActiveRecord::Schema.define(version: 2019_07_18_181530) do
 
   create_table "questions", force: :cascade do |t|
     t.string "body", null: false
-    t.integer "question_id"
+    t.integer "test_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -38,6 +41,8 @@ ActiveRecord::Schema.define(version: 2019_07_18_181530) do
     t.integer "level", default: 1
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_tests_on_category_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -46,4 +51,7 @@ ActiveRecord::Schema.define(version: 2019_07_18_181530) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "answers", "questions"
+  add_foreign_key "questions", "tests"
+  add_foreign_key "tests", "categories"
 end
