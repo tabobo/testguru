@@ -5,27 +5,10 @@
 
 <h2><%= link_to 'All questions in this test:', test_questions_path(@test) %></h2>
 
-<table>
-  <thead>
-    <tr>
-      <th>Question</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @test.questions.each do |question| %>
-      <tr>
-        <td><%= question.body %></td>
-        <td><%= link_to 'Edit', edit_test_question_path(@test, question) %></td>
-        <td><%= link_to 'Delete', [@test, question], method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
 <% @test.questions.each do |question| %>
   <ul>
    <li><%= link_to question.body, test_question_path(@test, question) %></li>
   </ul>
 <% end %>
+
+<%= link_to 'New Question', new_test_question_path(@test) %>
