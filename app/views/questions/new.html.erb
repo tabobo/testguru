@@ -1,0 +1,15 @@
+<h1>Create New Question</h1>
+
+<%= form_for @question, url: test_questions_path do |f| %>
+  <label>Текст вопроса:</label><br>
+  <%= f.text_field :body %><br>
+  <label>Номер теста:</label><br>
+  <%= f.text_field :test_id %><br>
+
+  <%= f.submit "Create question" %>
+<% end %>
+
+
+
+
+<%= link_to 'Back', test_questions_path(@test) %>
