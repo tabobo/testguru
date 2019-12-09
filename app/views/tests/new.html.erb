@@ -1,0 +1,8 @@
+<h1> Создание теста </h1>
+<%= form_for @test, url: tests_path do |f| %>
+  <%= f.text_field :title %><br>
+  <%= f.text_field :level %><br>
+  <%= f.text_field :category_id %><br>
+  <%= f.text_field :author_id %><br>
+  <%= f.submit "Создать тест" %>
+<% end %>

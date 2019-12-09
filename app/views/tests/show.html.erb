@@ -1,0 +1,14 @@
+<h1> <%= @test.title %> </h1>
+<p>Level: <%= @test.level %> </p>
+<p>Category: <%= @test.category_id %> </p>
+<p>Author: <%= @test.author_id %> </p>
+
+<h2><%= link_to 'All questions in this test:', test_questions_path(@test) %></h2>
+
+<% @test.questions.each do |question| %>
+  <ul>
+   <li><%= link_to question.body, test_question_path(@test, question) %></li>
+  </ul>
+<% end %>
+
+<%= link_to 'New Question', new_test_question_path(@test) %>
