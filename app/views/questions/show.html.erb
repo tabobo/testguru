@@ -1,6 +1,4 @@
-<h2>Просмотр вопроса:</h2>
-<p>Вопрос <%= @question.body %> </p>
+<h2>Your question: <%= @question.body %></h2>
 
 <%= link_to 'Edit', edit_test_question_path(@test) %> |
-<%= link_to 'Add Question', new_test_question_path(@test) %> |
-<%= link_to 'Back', tests_path %>
+<%= link_to 'Back', test_path(@test) %>

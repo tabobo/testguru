@@ -1,22 +1,15 @@
-<%= form_with(model: [@test, question], local: true) do |form| %>
-  <% if question.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(question.errors.count, "error") %> prohibited this post from being saved:</h2>
+<%= form_with(model: [@test, @question], local: true) do |f| %>
+  <%= render 'shared/errors', resource: @question %>
+  
+  <p>
+    <%= f.label :text %><br>
+    <%= f.text_field :body, id: :body %>
+  </p>
 
-      <ul>
-      <% question.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <p>
+    <%= f.label :test %><br>
+    <%= f.collection_select :test_id, Test.all, :id, :title, prompt: true %>
+  </p>
 
-  <div class="field">
-    <%= form.label :body %>
-    <%= form.text_area :body %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <p><%= f.submit %></p>
 <% end %>
