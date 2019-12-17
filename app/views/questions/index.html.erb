@@ -3,22 +3,12 @@
 <h1>Questions for <%= @test.title %></h1>
 
 <table>
-  <thead>
     <tr>
       <th>Question</th>
-      <th colspan="3"></th>
+      <th colspan="2">Actions</th>
     </tr>
-  </thead>
 
-  <tbody>
-    <% @questions.each do |question| %>
-      <tr>
-        <td><%= question.body %></td>
-        <td><%= link_to 'Edit question', edit_test_question_path(@test, question) %></td>
-        <td><%= link_to 'Delete question', [@test, question], method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+    <%= render @questions %>
 </table>
 
 <br>

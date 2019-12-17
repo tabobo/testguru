@@ -1,14 +1,19 @@
+<%= link_to 'Back to all tests', tests_path %> |
+<%= link_to 'Edit', edit_test_path(@test) %>
+
 <h1> <%= @test.title %> </h1>
 <p>Level: <%= @test.level %> </p>
 <p>Category: <%= @test.category_id %> </p>
 <p>Author: <%= @test.author_id %> </p>
+<p>Number of questions: <%= @test.questions.count %></p>
 
-<h2><%= link_to 'All questions in this test:', test_questions_path(@test) %></h2>
+<table>
+    <tr>
+      <th>All questions in this test</th>
+      <th colspan="3">Actions</th>
+    </tr>
 
-<% @test.questions.each do |question| %>
-  <ul>
-   <li><%= link_to question.body, test_question_path(@test, question) %></li>
-  </ul>
-<% end %>
+    <%= render @test.questions %>
+</table>
 
 <%= link_to 'New Question', new_test_question_path(@test) %>
