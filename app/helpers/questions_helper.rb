@@ -2,7 +2,7 @@
 
 module QuestionsHelper
   def question_header(question)
-    test_title = @test.title
+    test_title = @question.test.title
     if question.persisted?
       "Edit #{test_title} question"
     else

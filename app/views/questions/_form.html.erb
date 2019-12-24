@@ -1,14 +1,9 @@
-<%= form_with(model: [@test, @question], local: true) do |f| %>
+<%= form_with model: @question, local: true do |f| %>
   <%= render 'shared/errors', resource: @question %>
   
   <p>
     <%= f.label :text %><br>
     <%= f.text_field :body, id: :body %>
-  </p>
-
-  <p>
-    <%= f.label :test %><br>
-    <%= f.collection_select :test_id, Test.all, :id, :title, prompt: true %>
   </p>
 
   <p><%= f.submit %></p>

@@ -1,5 +1,13 @@
-<h1><%= question_header(@question) %></h1>
+<h1>question_header(@question)</h1>
+<%= form_with(model: @question, url: [@test, @question], local: true) do |f| %>
+  <%= render 'shared/errors', resource: @question %>
+  
+  <p>
+    <%= f.label :text %><br>
+    <%= f.text_field :body, id: :body %>
+  </p>
 
-<%= render 'form' %>
+  <p><%= f.submit %></p>
+<% end %>
 
-<%= link_to 'All questions', test_path(@test) %>
+<%= link_to 'Back', test_path(@test) %>

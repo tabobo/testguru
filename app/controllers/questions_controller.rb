@@ -1,34 +1,22 @@
 # frozen_string_literal: true
 
 class QuestionsController < ApplicationController
-  before_action :get_test
   before_action :set_question, only: %i[show edit update destroy]
-
-  rescue_from ActiveRecord::RecordNotFound, with: :render_404
+  before_action :get_test, except: %i[new create]
+  # rescue_from ActiveRecord::RecordNotFound, with: :render_404
 
   # GET /questions
   def index
     @questions = @test.questions
-
-    # render json: { questions: Question.all }
-
-    # render file: 'public/about/about', layout: false
-
-    # respond_to do |format|
-    #   format.html { render plain: 'All questions' }
-    #   format.json { render json: { questions: Question.all } }
-    # end
   end
 
   # GET /questions/1
   def show
-    # render plain: 'Show question"
-
-    # redirect_to root_path
   end
 
   # GET /questions/new
   def new
+    @test = Test.find(params[:test_id])
     @question = @test.questions.build
   end
 
@@ -37,7 +25,9 @@ class QuestionsController < ApplicationController
 
   # POST /questions
   def create
-    @question = @test.questions.build(question_params)
+    @test = Test.find(params[:test_id])
+    @question = @test.questions.new(question_params)
+
     respond_to do |format|
       if @question.save
         format.html { redirect_to test_path(@test), notice: 'Question was successfully created.' }
@@ -79,12 +69,24 @@ class QuestionsController < ApplicationController
 
   private
 
-  def get_test
-    @test = Test.find(params[:test_id])
+  # before
+  # http://localhost:3000/tests/1/questions/1
+  # def get_test
+  #   @test = Test.find(params[:test_id])
+  # end
+  # def set_question
+  #   @question = @test.questions.find(params[:id])
+  # end
+
+  # now
+  # http://localhost:3000/questions/1 because of shallow
+  
+  def set_question
+    @question = Question.find(params[:id])
   end
 
-  def set_question
-    @question = @test.questions.find(params[:id])
+  def get_test
+    @test = @question.test
   end
 
   def render_404
