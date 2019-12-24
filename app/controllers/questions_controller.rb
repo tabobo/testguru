@@ -11,6 +11,7 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
+    @test = @question.test
   end
 
   def new
@@ -20,6 +21,7 @@ class QuestionsController < ApplicationController
 
   def edit
     @question = Question.find(params[:id])
+    @test = @question.test
   end
 
   def create
@@ -39,6 +41,7 @@ class QuestionsController < ApplicationController
 
   def update
     @question = Question.find(params[:id])
+    @test = @question.test
     respond_to do |format|
       if @question.update(question_params)
         format.html { redirect_to test_path(@test, @question), notice: 'Question was successfully updated.' }
@@ -58,6 +61,7 @@ class QuestionsController < ApplicationController
 
   def destroy
     @question = Question.find(params[:id])
+    @test = @question.test
     @question.destroy
     respond_to do |format|
       format.html { redirect_to test_path(@test), notice: 'Question was successfully destroyed.' }

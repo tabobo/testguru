@@ -1,19 +1,24 @@
 class AnswersController < ApplicationController
 
-  before_action :find_question, only: %i[new create]
-  before_action :set_answer, only: %i[show edit update destroy]
+  #before_action :find_question, only: %i[new create]
+  #before_action :set_answer, only: %i[show edit update destroy]
 
   def show
+    @answer = Answer.find(params[:id])
   end
 
   def new
+    @test = Test.find(params[:test_id])
+    @question = Question.find(params[:id])
     @answer = @question.answers.new
   end
 
   def edit
+    @answer = Answer.find(params[:id])
   end
 
   def create
+    @question = Question.find(params[:id])
     @answer = Answer.new(answer_params)
 
     if @answer.save
@@ -24,6 +29,7 @@ class AnswersController < ApplicationController
   end
 
   def update
+    @answer = Answer.find(params[:id])
     if @answer.update(answer_params)
       redirect_to @answer, notice: 'Answer was successfully updated.'
     else
@@ -32,6 +38,7 @@ class AnswersController < ApplicationController
   end
 
   def destroy
+    @answer = Answer.find(params[:id])
     @answer.destroy
     redirect_to answer.question, notice: 'Answer was successfully destroyed.'
   end
