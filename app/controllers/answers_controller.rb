@@ -8,8 +8,7 @@ class AnswersController < ApplicationController
   end
 
   def new
-    @test = Test.find(params[:test_id])
-    @question = Question.find(params[:id])
+    @question = Question.find(params[:question_id])
     @answer = @question.answers.new
   end
 
@@ -18,8 +17,8 @@ class AnswersController < ApplicationController
   end
 
   def create
-    @question = Question.find(params[:id])
-    @answer = Answer.new(answer_params)
+    @question = Question.find(params[:question_id])
+    @answer = @question.answers.new(answer_params)
 
     if @answer.save
       redirect_to @answer, notice: 'Answer was successfully created.'
@@ -46,7 +45,7 @@ class AnswersController < ApplicationController
   private
 
   def find_question
-    @question = Question.find(params[:id])
+    @question = Question.find(params[:question_id])
   end
 
   def set_answer
@@ -54,7 +53,7 @@ class AnswersController < ApplicationController
   end
 
   def answer_params
-    params.require(:answer).permit(:body, :correct)
+    params.require(:answer).permit(:answer, :correct)
   end
 
 end
