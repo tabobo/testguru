@@ -39,7 +39,7 @@ class AnswersController < ApplicationController
   def destroy
     @answer = Answer.find(params[:id])
     @answer.destroy
-    redirect_to answer.question, notice: 'Answer was successfully destroyed.'
+    redirect_to @answer.question, notice: 'Answer was successfully destroyed.'
   end
 
   private
@@ -53,7 +53,7 @@ class AnswersController < ApplicationController
   end
 
   def answer_params
-    params.require(:answer).permit(:answer, :correct)
+    params.require(:answer).permit(:body, :correct)
   end
 
 end
