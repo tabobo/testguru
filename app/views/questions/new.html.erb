@@ -1,4 +1,4 @@
-<h1>question_header(@question)</h1>
+<h1><%= question_header(@question) %></h1>
 <%= form_with(model: @question, url: [@test, @question], local: true) do |f| %>
   <%= render 'shared/errors', resource: @question %>
   
