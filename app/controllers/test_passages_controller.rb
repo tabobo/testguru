@@ -1,5 +1,7 @@
 class TestPassagesController < ApplicationController
 
+  before_action :set_test_passage, only: %i[show update result]
+
   def show
     
   end
@@ -9,7 +11,11 @@ class TestPassagesController < ApplicationController
   end
     
   def update
-    
+    render :show
+  end
+
+  def set_test_passage
+    @test_passage = TestPassage.find(params[:id])
   end
 
 end

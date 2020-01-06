@@ -10,6 +10,6 @@ class TestPassage < ApplicationRecord
   private
 
   def before_validation_set_first_question
-    self.current_question = test.question.first if test.present?
+    self.current_question = test.questions.first if test.present?
   end
 end
