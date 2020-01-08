@@ -1,1 +1,11 @@
-<h1>The <%= @test_passage.test.title %> Test was completed! </h1>
+<h1>
+  <% if @test_passage.success? %>
+  <font color = 'green'>The <%= @test_passage.test.title %> has been successfully completed! </font>
+  <% else %>
+  <font color = 'red'>The <%= @test_passage.test.title %> has been failed! </font>
+  <% end %>
+
+</h1>
+<h2>Your score: <%= @test_passage.percent_result.to_i %></h2>
+
+<%= link_to 'Back to all tests', tests_path %>
