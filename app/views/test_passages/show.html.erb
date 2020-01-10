@@ -1,5 +1,10 @@
 <h1>Passing the <%= @test_passage.test.title %> Test</h1>
 
+<p>
+  Question №<%= @test_passage.test.questions.find_index(@test_passage.current_question) + 1 %>
+  from <%= @test_passage.test.questions.count %>
+</p>
+
 <b>
   <%= @test_passage.current_question.body %>
 </b>
