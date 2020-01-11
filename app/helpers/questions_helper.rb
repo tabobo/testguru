@@ -7,6 +7,6 @@ module QuestionsHelper
       "Edit #{test_title} question"
     else
       "Create New #{test_title} question"
-    end  
+    end
   end
 end

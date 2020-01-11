@@ -23,9 +23,7 @@ class TestPassage < ApplicationRecord
   end
 
   def accept!(answer_ids)
-    if correct_answer?(answer_ids)
-      self.correct_questions += 1
-    end
+    self.correct_questions += 1 if correct_answer?(answer_ids)
 
     save!
   end
@@ -40,7 +38,7 @@ class TestPassage < ApplicationRecord
     correct_answers_count = correct_answers.count
 
     (correct_answers.count == correct_answers.where(id: answer_ids).count) &&
-    correct_answers.count == answer_ids.count
+      correct_answers.count == answer_ids.count
   end
 
   def correct_answers
@@ -54,5 +52,4 @@ class TestPassage < ApplicationRecord
   def set_next_question
     self.current_question = next_question
   end
-
 end

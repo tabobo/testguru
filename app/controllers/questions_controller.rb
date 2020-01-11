@@ -1,31 +1,24 @@
 # frozen_string_literal: true
 
 class QuestionsController < ApplicationController
-  #before_action :set_question, only: %i[show edit update destroy]
-  #before_action :get_test, except: %i[new create]
-  # rescue_from ActiveRecord::RecordNotFound, with: :render_404
+  before_action :set_question, only: %i[show edit update destroy]
+  before_action :get_test, only: %i[show edit update destroy]
+  before_action :find_test, only: %i[new create]
+  rescue_from ActiveRecord::RecordNotFound, with: :render_404
 
   def index
     @questions = @test.questions
   end
 
-  def show
-    @question = Question.find(params[:id])
-    @test = @question.test
-  end
+  def show; end
 
   def new
-    @test = Test.find(params[:test_id])
     @question = @test.questions.build
   end
 
-  def edit
-    @question = Question.find(params[:id])
-    @test = @question.test
-  end
+  def edit; end
 
   def create
-    @test = Test.find(params[:test_id])
     @question = @test.questions.new(question_params)
 
     respond_to do |format|
@@ -40,8 +33,6 @@ class QuestionsController < ApplicationController
   end
 
   def update
-    @question = Question.find(params[:id])
-    @test = @question.test
     respond_to do |format|
       if @question.update(question_params)
         format.html { redirect_to test_path(@test, @question), notice: 'Question was successfully updated.' }
@@ -60,8 +51,6 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
-    @question = Question.find(params[:id])
-    @test = @question.test
     @question.destroy
     respond_to do |format|
       format.html { redirect_to test_path(@test), notice: 'Question was successfully destroyed.' }
@@ -70,6 +59,10 @@ class QuestionsController < ApplicationController
   end
 
   private
+
+  def find_test
+    @test = Test.find(params[:test_id])
+  end
 
   def set_question
     @question = Question.find(params[:id])
