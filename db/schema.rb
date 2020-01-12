@@ -12,12 +12,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_190_810_174_300) do
+ActiveRecord::Schema.define(version: 20_200_107_153_857) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
 
   create_table 'answers', force: :cascade do |t|
-    t.string 'answer', null: false
+    t.string 'body', null: false
     t.integer 'question_id'
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
@@ -42,6 +42,9 @@ ActiveRecord::Schema.define(version: 20_190_810_174_300) do
     t.bigint 'test_id'
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
+    t.bigint 'current_question_id'
+    t.integer 'correct_questions', default: 0
+    t.index ['current_question_id'], name: 'index_test_passages_on_current_question_id'
     t.index ['test_id'], name: 'index_test_passages_on_test_id'
     t.index ['user_id'], name: 'index_test_passages_on_user_id'
   end
@@ -65,6 +68,7 @@ ActiveRecord::Schema.define(version: 20_190_810_174_300) do
 
   add_foreign_key 'answers', 'questions'
   add_foreign_key 'questions', 'tests'
+  add_foreign_key 'test_passages', 'questions', column: 'current_question_id'
   add_foreign_key 'test_passages', 'tests'
   add_foreign_key 'test_passages', 'users'
   add_foreign_key 'tests', 'categories'

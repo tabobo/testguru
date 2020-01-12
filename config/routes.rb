@@ -1,11 +1,21 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  root 'questions#index'
+  root 'tests#index'
 
   resources :tests do
-    resources :questions
+    resources :questions, shallow: true, except: :index do
+      resources :answers, shallow: true, except: :index
+    end
+
+    member do
+      post :start
+    end
   end
 
-  # get 'tests/1/questions/:body', to: 'questions#search'
+  resources :test_passages, only: %i[show update] do
+    member do
+      get :result
+    end
+  end
 end

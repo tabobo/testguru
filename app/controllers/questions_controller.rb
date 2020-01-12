@@ -1,43 +1,26 @@
 # frozen_string_literal: true
 
 class QuestionsController < ApplicationController
-  before_action :get_test
   before_action :set_question, only: %i[show edit update destroy]
-
+  before_action :get_test, only: %i[show edit update destroy]
+  before_action :find_test, only: %i[new create]
   rescue_from ActiveRecord::RecordNotFound, with: :render_404
 
-  # GET /questions
   def index
     @questions = @test.questions
-
-    # render json: { questions: Question.all }
-
-    # render file: 'public/about/about', layout: false
-
-    # respond_to do |format|
-    #   format.html { render plain: 'All questions' }
-    #   format.json { render json: { questions: Question.all } }
-    # end
   end
 
-  # GET /questions/1
-  def show
-    # render plain: 'Show question"
+  def show; end
 
-    # redirect_to root_path
-  end
-
-  # GET /questions/new
   def new
     @question = @test.questions.build
   end
 
-  # GET /quetions/1/edit
   def edit; end
 
-  # POST /questions
   def create
-    @question = @test.questions.build(question_params)
+    @question = @test.questions.new(question_params)
+
     respond_to do |format|
       if @question.save
         format.html { redirect_to test_path(@test), notice: 'Question was successfully created.' }
@@ -49,7 +32,6 @@ class QuestionsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /questions/1
   def update
     respond_to do |format|
       if @question.update(question_params)
@@ -68,7 +50,6 @@ class QuestionsController < ApplicationController
     render plain: result.join("\n")
   end
 
-  # DELETE /questions/1
   def destroy
     @question.destroy
     respond_to do |format|
@@ -79,12 +60,16 @@ class QuestionsController < ApplicationController
 
   private
 
-  def get_test
+  def find_test
     @test = Test.find(params[:test_id])
   end
 
   def set_question
-    @question = @test.questions.find(params[:id])
+    @question = Question.find(params[:id])
+  end
+
+  def get_test
+    @test = @question.test
   end
 
   def render_404
