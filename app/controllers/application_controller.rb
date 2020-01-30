@@ -13,6 +13,7 @@ class ApplicationController < ActionController::Base
     end
 
     cookies[:email] = current_user&.email
+    session[:return_to] = request.url
   end
 
   def current_user

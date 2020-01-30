@@ -8,7 +8,8 @@ class SessionsController < ApplicationController
 
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to tests_path
+      redirect_to session[:return_to] || root_path
+      session[:return_to] = nil
     else
       flash.now[:alert] = 'Are you a Guru? Verify your Email and Password please!'
       render :new
