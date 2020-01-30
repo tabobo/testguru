@@ -4,7 +4,6 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user,
                 :logged_in?,
-                :log_out
 
   private
 
@@ -24,8 +23,4 @@ class ApplicationController < ActionController::Base
     current_user.present?
   end
 
-  def log_out
-    session.delete(:user_id)
-    current_user = nil
-  end
 end
