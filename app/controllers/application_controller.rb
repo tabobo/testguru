@@ -1,11 +1,9 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
-
   helper_method :current_user,
                 :logged_in?,
-
-  private
+                private
 
   def authenticate_user!
     unless current_user
@@ -23,5 +21,4 @@ class ApplicationController < ActionController::Base
   def logged_in?
     current_user.present?
   end
-
 end
