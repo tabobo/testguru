@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-class Admin::TestsController < ApplicationController
-  before_action :authenticate_user!
+class Admin::TestsController < Admin::BaseController
+
   before_action :get_test, only: %i[show edit update destroy start]
 
   def index
