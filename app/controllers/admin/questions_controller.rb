@@ -4,7 +4,7 @@ class Admin::QuestionsController < Admin::BaseController
   before_action :set_question, only: %i[show edit update destroy]
   before_action :get_test, only: %i[show edit update destroy]
   before_action :find_test, only: %i[new create]
-  #rescue_from ActiveRecord::RecordNotFound, with: :render_404
+  # rescue_from ActiveRecord::RecordNotFound, with: :render_404
 
   def index
     @questions = @test.questions

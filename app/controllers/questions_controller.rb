@@ -6,7 +6,7 @@ class QuestionsController < ApplicationController
   def index
     @questions = @test.questions
   end
-  
+
   def search
     result = ["Class: #{params.class}", "Parameters: #{params.inspect}"]
 

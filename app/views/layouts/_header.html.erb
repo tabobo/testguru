@@ -1,6 +1,6 @@
 <p class="nav user">
 <% if user_signed_in? %>
-  Welcome, <b><%= current_user.email %></b> Guru   |  
+  Welcome, <b><%= current_user.first_name %> <%= current_user.last_name %></b> Guru   |  
   <%= link_to "Home", root_path %> | 
   <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
 <% else %>
