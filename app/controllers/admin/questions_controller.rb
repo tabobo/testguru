@@ -44,12 +44,6 @@ class Admin::QuestionsController < Admin::BaseController
     end
   end
 
-  def search
-    result = ["Class: #{params.class}", "Parameters: #{params.inspect}"]
-
-    render plain: result.join("\n")
-  end
-
   def destroy
     @question.destroy
     respond_to do |format|
