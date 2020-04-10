@@ -6,10 +6,6 @@ class Admin::QuestionsController < Admin::BaseController
   before_action :find_test, only: %i[new create]
   # rescue_from ActiveRecord::RecordNotFound, with: :render_404
 
-  def index
-    @questions = @test.questions
-  end
-
   def show; end
 
   def new
