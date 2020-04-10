@@ -3,10 +3,6 @@
 class QuestionsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :render_404
 
-  def index
-    @questions = @test.questions
-  end
-
   private
 
   def find_test
