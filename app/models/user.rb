@@ -24,4 +24,8 @@ class User < ApplicationRecord
   scope :tests_by_level, lambda { |level|
     joins(:tests).where(tests: { level: level }).distinct
   }
+
+  def admin?
+    is_a?(Admin)
+  end
 end
