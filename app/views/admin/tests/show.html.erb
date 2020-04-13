@@ -1,5 +1,5 @@
-<%= link_to 'Back to all tests', tests_path %> |
-<%= link_to 'Edit', edit_test_path(@test) %>
+<%= link_to 'Back to all tests', admin_tests_path %> |
+<%= link_to 'Edit', edit_admin_test_path(@test) %>
 
 <h1> <%= @test.title %> </h1>
 <p>Level: <%= @test.level %> </p>
@@ -16,4 +16,4 @@
     <%= render @test.questions %>
 </table>
 
-<%= link_to 'New Question', new_test_question_path(@test) %>
+<%= link_to 'New Question', new_admin_test_question_path(@test) %>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Questions for <%= @test.title %></h1>
+
+<table>
+    <tr>
+      <th>Question</th>
+      <th colspan="2">Actions</th>
+    </tr>
+
+    <%= render @questions %>
+</table>
+
+<br>
+
+<%= link_to 'New Question', new_admin_question_path(@test) %>
+
+<br>
+<%= link_to 'Back to test', [@test] %>
