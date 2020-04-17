@@ -1,6 +1,6 @@
 <h1>
   <% if @test_passage.success? %>
-  The <%= @test_passage.test.title %> has been successfully completed! 
+  <%= t('.header', title: @test_passage.test.title) %> 
   <h2> Your score: <font color = 'green'><%= @test_passage.percent_result.to_i %></font></h2>
   <% else %>
   The <%= @test_passage.test.title %> has been failed! 
