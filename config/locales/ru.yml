@@ -44,6 +44,9 @@ ru:
         number_questions: "Количество вопросов"
         actions: "Действия"
         link: "Создать тест"
+      new:
+        header: "Создать новый тест"
+        link_back: "Назад ко всем тестам"
       test:
         link_show: "Показать"
         link_edit: "Редактировать"

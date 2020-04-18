@@ -41,6 +41,9 @@ en:
         number_questions: "Number of questions"
         actions: "Actions"
         link: "New Test"
+      new:
+        header: "Create new Test"
+        link_back: "Back to all tests"
       test:
         link_show: "Show"
         link_edit: "Edit"
