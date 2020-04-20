@@ -6,11 +6,21 @@ en:
       test:
         create: "Create Test"
         update: "Update Test"
+      answer:
+        update: "Update answer"
+      question:
+        create: "New question"
+        update: "Update question"
     label:
       test:
         title: "Title"
         level: "Level"
         category: "Category"
+      answer:
+        body: "Body"
+        correct: "Correct"
+      question:
+        text: "Text"
 
   shared:
     errors:
@@ -25,29 +35,46 @@ en:
       level: "Level"
       number_questions: "Number of questions"
       actions: "Actions"
+      start_button: "Start"
 
   test_passages:
     result:
       header: "The %{title} Test was Completed!"
 
   admin:
+    actions:
+      back: "Back"
+      edit: "Edit"
+      show: "Show"
+      delete: "Delete"
+      create: "New question"
+      create_answer: "New answer"
+      new_test: "New Test"
     tests:
       create: 
         success: "Test was successfully created."
-      index:
-        header: "Tricky Tests"
-        title: "Title"
-        level: "Level"
-        number_questions: "Number of questions"
-        actions: "Actions"
-        link: "New Test"
       new:
         header: "Create new Test"
-        link_back: "Back to all tests"
-      test:
-        link_show: "Show"
-        link_edit: "Edit"
-        link_delete: "Delete"
+      edit:
+        header: "Edit"
+      show:
+        th1: "All questions in this Test"
+        th2: "Actions"
+        level: "Level:"
+        category: "Category:"
+        author: "Author:"
+        number_questions: "Number of questions:"
+    questions:
+      show:
+        header: "question"
+        header2: "Answers"
+    answers:
+      show:
+        header: "Question"
+        header2: "Answer"
+        header3: "Correct: "
+      edit:
+        header: "Edit answer"
 
   tests_mailer:
     completed_test:

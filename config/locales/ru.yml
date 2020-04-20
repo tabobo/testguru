@@ -6,11 +6,21 @@ ru:
       test:
         create: "Создать Тест"
         update: "Обновить Тест"
+      answer:
+        update: "Обновить ответ"
+      question:
+        create: "Создать вопрос"
+        update: "Обновить вопрос"
     label:
       test:
         title: "Название"
         level: "Уровень"
         category: "Категория"
+      answer:
+        body: "Текст ответа"
+        correct: "Правильный ли"
+      question:
+        text: "Текст"
 
   shared:
     errors:
@@ -34,23 +44,39 @@ ru:
       header: "Тест %{title} успешно завершен!"
 
   admin:
+    actions:
+      back: "Назад"
+      edit: "Редактировать"
+      show: "Показать"
+      delete: "Удалить"
+      create: "Новый вопрос"
+      create_answer: "Новый ответ"
+      new_test: "Создать тест"
     tests:
       create:
         success: "Тест успешно создан."
-      index:
-        header: "Доступные Тесты"
-        title: "Название"
-        level: "Уровень"
-        number_questions: "Количество вопросов"
-        actions: "Действия"
-        link: "Создать тест"
       new:
         header: "Создать новый тест"
-        link_back: "Назад ко всем тестам"
-      test:
-        link_show: "Показать"
-        link_edit: "Редактировать"
-        link_delete: "Удалить"
+      edit:
+        header: "Редактировать"
+      show:
+        th1: "Все вопросы в этом тесте"
+        th2: "Действия"
+        level: "Уровень:"
+        category: "Категория:"
+        author: "Автор:"
+        number_questions: "Количество вопросов:"
+    questions:
+      show:
+        header: "вопрос"
+        header2: "Ответы"
+    answers:
+      show:
+        header: "Вопрос"
+        header2: "Ответ"
+        header3: "Правильный ли: "
+      edit:
+        header: "Редактирование ответа"
 
   tests_mailer:
     completed_test:
