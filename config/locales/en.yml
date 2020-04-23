@@ -124,3 +124,17 @@ en:
       new:
         header: "Become a Guru"
         submit: "Sign up"
+    sessions:
+      header: "Enter the Guru Gates"
+      email: "Email"
+      password: "Password"
+      remember: "Remember me"
+      submit: "Enter"
+    shared:
+      actions:
+        login: "Log in"
+        signup: "Sign up"
+        password: "Forgot your password?"
+        confirm: "Didn't receive confirmation instructions?"
+        unlock: "Didn't receive unlock instructions?"
+        signinwith: "Sign in with"

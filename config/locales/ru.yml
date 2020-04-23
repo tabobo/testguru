@@ -126,3 +126,17 @@ ru:
       new:
         header: "Стань Гуру"
         submit: "Зарегистрироваться"
+    sessions:
+      header: "Войти"
+      email: "Электронная почта"
+      password: "Пароль"
+      remember: "Запомнить"
+      submit: "Войти"
+    shared:
+      actions:
+        login: "Войти"
+        signup: "Зарегистрироваться"
+        password: "Забыли пароль?"
+        confirm: "Не получили инструкции по подтверждению пароля?"
+        unlock: "Не получили инструкции по разблокировке аккаунта?"
+        signinwith: "Sign in with"
