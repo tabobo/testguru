@@ -1,0 +1,142 @@
+ru:
+  hello: "Привет миры"
+
+  helpers:
+    submit:
+      test:
+        create: "Создать Тест"
+        update: "Обновить Тест"
+      answer:
+        update: "Обновить ответ"
+      question:
+        create: "Создать вопрос"
+        update: "Обновить вопрос"
+    label:
+      test:
+        title: "Название"
+        level: "Уровень"
+        category: "Категория"
+      answer:
+        body: "Текст ответа"
+        correct: "Правильный ли"
+      question:
+        text: "Текст"
+
+  shared:
+    errors:
+      header:
+        few: "Обнаружено %{count} ошибки"
+        many: "Обнаружено %{count} ошибок"
+        one: "Обнаружена %{count} ошибка"
+        other: "Обнаружено %{count} ошибки"
+
+  tests:
+    index:
+      header: "Доступные Тесты"
+      title: "Название"
+      level: "Уровень"
+      number_questions: "Количество вопросов"
+      actions: "Действия"
+      start_button: "Начать"
+
+  test_passages:
+    result:
+      header: "Тест %{title} успешно завершен!"
+
+  admin:
+    actions:
+      back: "Назад"
+      edit: "Редактировать"
+      show: "Показать"
+      delete: "Удалить"
+      create: "Новый вопрос"
+      create_answer: "Новый ответ"
+      new_test: "Создать тест"
+    tests:
+      create:
+        success: "Тест успешно создан."
+      new:
+        header: "Создать новый тест"
+      edit:
+        header: "Редактировать"
+      show:
+        th1: "Все вопросы в этом тесте"
+        th2: "Действия"
+        level: "Уровень:"
+        category: "Категория:"
+        author: "Автор:"
+        number_questions: "Количество вопросов:"
+    questions:
+      show:
+        header: "вопрос"
+        header2: "Ответы"
+    answers:
+      show:
+        header: "Вопрос"
+        header2: "Ответ"
+        header3: "Правильный ли: "
+      edit:
+        header: "Редактирование ответа"
+
+  tests_mailer:
+    completed_test:
+      subject: "Вы успешно завершили тест на TestGuru!"
+
+  devise:
+    confirmations:
+      resend_instructions: "Отправить инструкции повторно"
+      submit: "Отправить инструкции повторно"
+    mailer:
+      confirmation_instructions:
+        subject: "Инструкции по подтверждению учётной записи"
+        header: "Добро пожаловать "
+        text: "Чтобы подтвердить свою почту перейдите по ссылке ниже"
+        confirm: "Подтвердить"
+      reset_password_instructions:
+        subject: "Инструкции по восстановлению пароля"
+        header: "Здравствуйте"
+        p1: "Кто-то запросил ссылку на изменение пароля. Вы можете это сделать по ссылке ниже"
+        p2: "Если вы не хотите менять пароль, пожалуйста, не отвечайте на это письмо."
+        p3: "Ваш пароль не будет изменен до тех пор, пока вы не перейдете по ссылке выше."
+        action: "Изменить мой пароль"
+      email_changed:
+        subject: "Еmail адрес был изменён"
+        header: "Здравствуйте"
+        note: "We're contacting you to notify you that your email is being changed to"
+      password_change:
+        subject: "Пароль был изменён."
+        header: "Здравствуйте"
+        note: "Пароль был изменен."
+      unlock_instructions:
+        header: "Здравствуйте"
+        p1: "Ваш аккаунт был заблокирован после нескольких неудачных попыток зайти."
+        p2: "Перейдите по ссылке ниже, чтобы разблокировать аккаунт:"
+        action: "Разблокировать аккаунт"
+    registrations:
+      edit:
+        header: "Редактировать"
+        first_name: "Имя"
+        last_name: "Фамилия"
+        email: "Электронная почта"
+        password: "Пароль"
+        password_confirmation: "Подтвердите пароль"
+        current_password: "Текущий пароль"
+        submit: "Обновить"
+        h3: "Выйти из моего аккаунта"
+      new:
+        header: "Стань Гуру"
+        submit: "Зарегистрироваться"
+    sessions:
+      header: "Войти"
+      email: "Электронная почта"
+      password: "Пароль"
+      remember: "Запомнить"
+      submit: "Войти"
+    shared:
+      actions:
+        login: "Войти"
+        signup: "Зарегистрироваться"
+        password: "Забыли пароль?"
+        confirm: "Не получили инструкции по подтверждению пароля?"
+        unlock: "Не получили инструкции по разблокировке аккаунта?"
+        signinwith: "Sign in with"

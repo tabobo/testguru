@@ -1,33 +1,140 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
   hello: "Hello world"
+
+  helpers:
+    submit:
+      test:
+        create: "Create Test"
+        update: "Update Test"
+      answer:
+        update: "Update answer"
+      question:
+        create: "New question"
+        update: "Update question"
+    label:
+      test:
+        title: "Title"
+        level: "Level"
+        category: "Category"
+      answer:
+        body: "Body"
+        correct: "Correct"
+      question:
+        text: "Text"
+
+  shared:
+    errors:
+      header:
+        one: "%{count} error detected"
+        other: "%{count} errors detected"
+
+  tests:
+    index:
+      header: "Tricky Tests"
+      title: "Title"
+      level: "Level"
+      number_questions: "Number of questions"
+      actions: "Actions"
+      start_button: "Start"
+
+  test_passages:
+    result:
+      header: "The %{title} Test was Completed!"
+
+  admin:
+    actions:
+      back: "Back"
+      edit: "Edit"
+      show: "Show"
+      delete: "Delete"
+      create: "New question"
+      create_answer: "New answer"
+      new_test: "New Test"
+    tests:
+      create: 
+        success: "Test was successfully created."
+      new:
+        header: "Create new Test"
+      edit:
+        header: "Edit"
+      show:
+        th1: "All questions in this Test"
+        th2: "Actions"
+        level: "Level:"
+        category: "Category:"
+        author: "Author:"
+        number_questions: "Number of questions:"
+    questions:
+      show:
+        header: "question"
+        header2: "Answers"
+    answers:
+      show:
+        header: "Question"
+        header2: "Answer"
+        header3: "Correct: "
+      edit:
+        header: "Edit answer"
+
+  tests_mailer:
+    completed_test:
+      subject: "You just completed the TestGuru test!"
+
+  devise:
+    confirmations:
+        resend_instructions: "Resend instructions"
+        submit: "Resend instructions"
+    mailer:
+      confirmation_instructions:
+        subject: "Instructions"
+        header: "Welcome "
+        text: "You can confirm your account email through the link below:"
+        confirm: "Confirm my account"
+      reset_password_instructions:
+        subject: "Instructions"
+        header: "Hello"
+        p1: "Someone has requested a link to change your password. You can do this through the link below."
+        p2: "If you didn't request this, please ignore this email."
+        p3: "Your password won't change until you access the link above and create a new one."
+        action: "Change my password"
+      email_changed:
+        subject: "Еmail адрес был изменён"
+        header: "Hello"
+        note: "We're contacting you to notify you that your email is being changed to"
+      password_change:
+        subject: "Password was changed."
+        header: "Hello"
+        note: "We're contacting you to notify you that your password has been changed."
+      unlock_instructions:
+        header: "Hello"
+        p1: "Your account has been locked due to an excessive number of unsuccessful sign in attempts."
+        p2: "Click the link below to unlock your account:"
+        action: "Unlock my account"
+    registrations:
+      edit:
+        header: "Edit"
+        first_name: "First name"
+        last_name: "Last name"
+        email: "Email"
+        password: "Password"
+        password_confirmation: "Confirm password"
+        current_password: "Current password"
+        submit: "Update"
+        h3: "Cancel my account"
+      new:
+        header: "Become a Guru"
+        submit: "Sign up"
+    sessions:
+      header: "Enter the Guru Gates"
+      email: "Email"
+      password: "Password"
+      remember: "Remember me"
+      submit: "Enter"
+    shared:
+      actions:
+        login: "Log in"
+        signup: "Sign up"
+        password: "Forgot your password?"
+        confirm: "Didn't receive confirmation instructions?"
+        unlock: "Didn't receive unlock instructions?"
+        signinwith: "Sign in with"
