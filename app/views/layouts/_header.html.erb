@@ -1,12 +1,16 @@
-<p class="nav user">
-<% if user_signed_in? %>
-  Welcome, <b><%= current_user.first_name %> <%= current_user.last_name %></b> Guru   |  
-  <%= link_to "Home", root_path %> | 
-  <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
-<% else %>
-  <%= link_to "Log in", user_session_path %> | 
-  <%= link_to "Sign up", new_user_session_path %>
-<% end %>
-</p>
+<nav class="navbar navbar-light bg-light">
+  <%= link_to 'TestGuru', root_path, class: 'navbar-brand' %>
+
+  <span class="navbar-text">
+    <% if user_signed_in? %>
+      Welcome, <b><%= current_user.first_name %> <%= current_user.last_name %></b> Guru   |  
+      <%= link_to "Home", root_path %> | 
+      <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
+    <% else %>
+      <%= link_to "Log in", user_session_path %> | 
+      <%= link_to "Sign up", new_user_session_path %>
+    <% end %>
+  </span>
+</nav>
   
   
