@@ -1,6 +1,6 @@
-<h1>Passing the <%= @test_passage.test.title %> Test</h1>
+<h3>Passing the <small class="text-muted"><%= @test_passage.test.title %></small> Test</h3>
 
-<p>
+<p class="lead">
   Question №<%= @test_passage.test.questions.find_index(@test_passage.current_question) + 1 %>
   from <%= @test_passage.test.questions.count %>
 </p>
@@ -17,5 +17,5 @@
     </p>
   <% end %>
 
-  <p><%= form.submit 'Next' %></p>
+  <p><%= form.submit 'Next', class: 'btn btn-primary btn-sm' %></p>
 <% end %>
