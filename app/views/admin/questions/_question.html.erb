@@ -4,6 +4,7 @@
   <td><%= link_to t('admin.actions.edit'), edit_admin_question_path(question) %></td>
   <td><%= link_to t('admin.actions.delete'), 
                   admin_question_path(question), 
+                  :class => "btn btn-outline-danger btn-sm",
                   method: :delete, 
                   data: { confirm: 'Are you sure?' } %></td>
 </tr>
