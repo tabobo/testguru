@@ -8,6 +8,7 @@
   <td>
     <%= link_to t('admin.actions.delete'),
                 admin_test_path(test),
+                :class => "btn btn-outline-danger btn-sm",
                 method: :delete,
                 data: {confirm: 'Are you sure?'} %>
   </td>  

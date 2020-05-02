@@ -22,6 +22,14 @@ ru:
       question:
         text: "Текст"
 
+  layouts:
+    header:
+      actions:
+        home: "Домой"
+        logout: "Выйти"
+        login: "Войти"
+        signup: "Зарегистрироваться"
+
   shared:
     errors:
       header:
