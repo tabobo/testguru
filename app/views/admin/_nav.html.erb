@@ -1,8 +1,8 @@
 <div class="navbar navbar-light bg-light">
-  <%= link_to 'TestGuru Admin Panel', admin_tests_path, class: 'navbar-text' %>
+  <%= link_to t('admin.nav.admin_panel'), admin_tests_path, class: 'navbar-text' %>
   <%= link_to 'TestGuru', root_path, class: 'navbar-brand' %>
 
   <div class="nav-admin user">
-    Welcome, <b class="nav-admin user-email"><%= current_user.first_name %> <%= current_user.last_name %></b> Guru | <%= link_to t('layouts.header.actions.logout'), destroy_user_session_path, method: :delete %>
+    <%= t('admin.nav.welcome') %>, <b class="nav-admin user-email"><%= current_user.first_name %> <%= current_user.last_name %></b> Guru | <%= link_to t('layouts.header.actions.logout'), destroy_user_session_path, method: :delete %>
   </div>
 </div>

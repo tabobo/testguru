@@ -50,6 +50,9 @@ en:
       header: "The %{title} Test was Completed!"
 
   admin:
+    nav:
+      admin_panel: "Admin Panel"
+      welcome: "Welcome"
     actions:
       back: "Back"
       edit: "Edit"
