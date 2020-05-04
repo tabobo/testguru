@@ -1,13 +1,17 @@
-<h1><%= question_header(@question) %></h1>
-<%= form_with model: [:admin, @test, @question], local: true do |f| %>
-  <%= render 'shared/errors', resource: @question %>
-  
-  <p>
-    <%= f.label :text %><br>
-    <%= f.text_field :body, id: :body %>
-  </p>
+<h2><%= question_header(@question) %></h2>
+<div class="card w-50">
+  <div class="card-body">
+    <%= form_with model: [:admin, @test, @question], local: true do |f| %>
+      <%= render 'shared/errors', resource: @question %>
+      
+      <p>
+        <%= f.label :text %><br>
+        <%= f.text_field :body, id: :body %>
+      </p>
 
-  <p><%= f.submit %></p>
-<% end %>
+      <p><%= f.submit class: 'btn btn-primary' %></p>
+    <% end %>
+  </div>
+</div>
 
 <%= link_to t('admin.actions.back'), admin_test_path(@test) %>

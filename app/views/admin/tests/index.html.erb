@@ -1,10 +1,7 @@
 <h1><%= t('tests.index.header') %></h1>
+<%= link_to t('admin.actions.new_test'), new_admin_test_path, :class => "btn btn-outline-primary my-4" %>
 
-<p>
-  <%= link_to t('admin.actions.new_test'), new_admin_test_path %>
-</p>
-
-<table>
+<table class="table table-striped">
   <tr>
     <th><%= t('tests.index.title') %></th>
     <th><%= t('tests.index.level') %></th>

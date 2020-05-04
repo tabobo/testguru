@@ -22,6 +22,14 @@ ru:
       question:
         text: "Текст"
 
+  layouts:
+    header:
+      actions:
+        home: "Домой"
+        logout: "Выйти"
+        login: "Войти"
+        signup: "Зарегистрироваться"
+
   shared:
     errors:
       header:
@@ -44,6 +52,9 @@ ru:
       header: "Тест %{title} успешно завершен!"
 
   admin:
+    nav:
+      admin_panel: "Панель администратора"
+      welcome: "Добро пожаловать"
     actions:
       back: "Назад"
       edit: "Редактировать"

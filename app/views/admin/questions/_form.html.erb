@@ -1,10 +1,14 @@
-<%= form_with model: [:admin, @question], local: true do |f| %>
-  <%= render 'shared/errors', resource: @question %>
-  
-  <p>
-    <%= f.label :text %><br>
-    <%= f.text_field :body, id: :body %>
-  </p>
+<div class="card w-50">
+  <div class="card-body">
+    <%= form_with model: [:admin, @question], local: true do |f| %>
+      <%= render 'shared/errors', resource: @question %>
+      
+      <p>
+        <%= f.label :text %><br>
+        <%= f.text_field :body, id: :body, class: 'form-control' %>
+      </p>
 
-  <p><%= f.submit %></p>
-<% end %>
+      <p><%= f.submit class: 'btn btn-primary' %></p>
+    <% end %>
+  </div>
+</div>

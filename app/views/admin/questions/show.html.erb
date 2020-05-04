@@ -1,4 +1,15 @@
-<h1><%= @question.test.title %> <%= t('.header') %></h1>
+<nav aria-label="breadcrumb bg-white">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <%= link_to t('admin.actions.edit'), edit_admin_question_path(@question) %>
+    </li>
+    <li class="breadcrumb-item">
+      <%= link_to t('admin.actions.back'), admin_test_path(@test) %>
+    </li>
+  </ol>
+</nav>
+
+<h3><%= @question.test.title %> <%= t('.header') %></h3>
 
 <p>
   <%= @question.body %>
@@ -6,11 +17,9 @@
 
 <h2><%= t('.header2') %></h2>
 
-<%= link_to t('admin.actions.create_answer'), new_admin_question_answer_path(@question) %>
+<%= link_to t('admin.actions.create_answer'), new_admin_question_answer_path(@question), :class => "btn btn-outline-primary my-3" %>
 
 <ol>
   <%= render @question.answers %>
 </ol>
 
-<%= link_to t('admin.actions.edit'), edit_admin_question_path(@question) %> | 
-<%= link_to t('admin.actions.back'), admin_test_path(@test) %>
