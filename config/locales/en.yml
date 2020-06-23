@@ -36,6 +36,11 @@ en:
         one: "%{count} error detected"
         other: "%{count} errors detected"
 
+  gists:
+    question: "Question"
+    url: "Gist URL"
+    user: "User"
+
   tests:
     index:
       header: "Tricky Tests"

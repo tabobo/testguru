@@ -9,8 +9,9 @@ class TestPassagesController < ApplicationController
   def result; end
 
   def gist
-    gist_service = GistQuestionService.new(@test_passage.current_question)
+    gist_service = GistQuestionService.new(current_user, @test_passage.current_question)
     result = gist_service.call
+    
     flash_options = if gist_service.success?
       { notice: t('.success') }
     else

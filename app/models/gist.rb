@@ -1,4 +1,9 @@
 class Gist < ApplicationRecord
   belongs_to :user
-  has_many :questions
+  belongs_to :question
+
+  validates :question, presence: true
+  validates :gist, presence: true
+  validates :user, presence: true
+
 end
