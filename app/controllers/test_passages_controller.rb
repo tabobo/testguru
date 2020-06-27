@@ -13,7 +13,7 @@ class TestPassagesController < ApplicationController
     result = gist_service.call
     
     flash_options = if gist_service.success?
-      { notice: t('.success') }
+      { notice: "Gist успешно сохранён! <a href='#{Gist.last.gist}'>link</a>" }
     else
       { alert: t('.failure') }
     end
