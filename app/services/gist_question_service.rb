@@ -1,7 +1,7 @@
 class GistQuestionService
   attr_reader :client
   
-  def initialize(user, question, client = Octokit::Client.new(access_token: "73e80a616bda6701cbc3c54c5bf40d73935bf54b"))
+  def initialize(user, question, client = Octokit::Client.new(access_token: ENV['ACCESS_TOKEN']))
     @question = question
     @user = user
     @test = @question.test
