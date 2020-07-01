@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Gist < ApplicationRecord
   belongs_to :user
   belongs_to :question
@@ -5,5 +7,4 @@ class Gist < ApplicationRecord
   validates :question, presence: true
   validates :gist, presence: true
   validates :user, presence: true
-
 end

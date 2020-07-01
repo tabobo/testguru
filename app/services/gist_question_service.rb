@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class GistQuestionService
   attr_reader :client
-  
+
   def initialize(user, question, client = Octokit::Client.new(access_token: ENV['ACCESS_TOKEN']))
     @question = question
     @user = user
@@ -10,8 +12,10 @@ class GistQuestionService
 
   def call
     @client.create_gist(gist_params)
-    gist_url = @client.last_response.data.html_url
-    Gist.create!(user: @user, gist: gist_url, question: @question)
+  end
+
+  def gist_url
+    @gist_url = @client.last_response.data.html_url
   end
 
   def success?

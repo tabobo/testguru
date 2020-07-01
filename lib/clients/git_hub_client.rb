@@ -1,11 +1,12 @@
-class GitHubClient
+# frozen_string_literal: true
 
+class GitHubClient
   ROOT_ENDPOINT = 'https://api.github.com'
   ACCES_TOKEN = '73e80a616bda6701cbc3c54c5bf40d73935bf54b'
 
   def initialize
     @http_client = setup_http_client
-  end 
+  end
 
   def create_gist(params)
     @http_client.post('gists') do |request|
