@@ -13,7 +13,7 @@ class TestPassagesController < ApplicationController
     gist_service.call
     
     if gist_service.success?
-      Gist.create!(user: current_user, gist: gist_service.gist_url, question: @test_passage.current_question)
+      current_user.gists.create!(gist: gist_service.gist_url, question: @test_passage.current_question)
       flash_options = { notice: t('.success', url: gist_service.gist_url) }
     else
       flash_options = { alert: t('.failure') }
