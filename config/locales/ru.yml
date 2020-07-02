@@ -38,6 +38,11 @@ ru:
         one: "Обнаружена %{count} ошибка"
         other: "Обнаружено %{count} ошибки"
 
+  gists:
+    question: "Вопрос"
+    url: "Ссылка на гист"
+    user: "Пользователь"
+
   tests:
     index:
       header: "Доступные Тесты"
@@ -50,6 +55,9 @@ ru:
   test_passages:
     result:
       header: "Тест %{title} успешно завершен!"
+    gist:
+      success: "Gist успешно сохранён! <a href='%{url}'>Посмотреть Gist</a>"
+      failure: "Во время сохранения gist произошла ошибка"
 
   admin:
     nav:

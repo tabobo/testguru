@@ -36,6 +36,11 @@ en:
         one: "%{count} error detected"
         other: "%{count} errors detected"
 
+  gists:
+    question: "Question"
+    url: "Gist URL"
+    user: "User"
+
   tests:
     index:
       header: "Tricky Tests"
@@ -48,6 +53,9 @@ en:
   test_passages:
     result:
       header: "The %{title} Test was Completed!"
+    gist:
+      success: "Gist was successfully created! <a href='%{url}'>Go to Gist</a>"
+      failure: "An error occurred while saving gist"
 
   admin:
     nav:
