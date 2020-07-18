@@ -1,9 +1,12 @@
 function validatePassword() {
-  if (document.getElementById('user_password').value == '') {
-    document.getElementById('message').innerHTML = ' ';
+  var password = document.getElementById('user_password').value;
+  var confirm_password = document.getElementById('user_password_confirmation').value;
+  
+  if (password == '') {
+    return document.getElementById('message').innerHTML = ' ';
   }
-  else if (document.getElementById('user_password').value ==
-    document.getElementById('user_password_confirmation').value) {
+
+  if (password == confirm_password) {
     document.getElementById('message').style.color = 'green';
     document.getElementById('message').innerHTML = 'matching';
   } else {
@@ -12,5 +15,4 @@ function validatePassword() {
   }
 }
 
-document.addEventListener('input', validatePassword)
 document.addEventListener('input', validatePassword)
