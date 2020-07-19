@@ -30,7 +30,9 @@
 
       <div class="field">
         <%= f.label t('devise.registrations.edit.password_confirmation') %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", oninput: "this.setCustomValidity('')" %>
+        <span id='message'></span>
+
       </div>
 
       <div class="actions">
