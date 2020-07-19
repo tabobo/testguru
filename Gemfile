@@ -54,7 +54,7 @@ gem 'rails-i18n'
 
 # UI
 
-gem 'bootstrap', '~> 4.0.0.beta'
+gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 gem 'octicons_helper'
 
