@@ -1,6 +1,8 @@
 <h1><%= t('tests.index.header') %></h1>
 <%= link_to t('admin.actions.new_test'), new_admin_test_path, :class => "btn btn-outline-primary my-4" %>
 
+<%= render 'shared/errors', resource: @test %>
+
 <table class="table table-striped">
   <tr>
     <th class="sort-by-title pointer">
