@@ -1,5 +1,16 @@
 <h3>Passing the <small class="text-muted"><%= @test_passage.test.title %></small> Test</h3>
 
+<div id = "myProgress" >
+  <%= content_tag(:div, "&nbsp;".html_safe, 
+                  :id => "progress_bar", 
+                  'data-valuenow' => @test_passage.test.questions.find_index(@test_passage.current_question) * 100 / @test_passage.test.questions.count, 'aria_valuemin' => 0, 'aria_valuemax' => 100,
+                  'role' => 'progressbar',
+                  class: "progress-bar", 
+                  style: "width: 1%") %>
+ </div>
+
+<br>
+
 <p class="lead">
   Question №<%= @test_passage.test.questions.find_index(@test_passage.current_question) + 1 %>
   from <%= @test_passage.test.questions.count %>
@@ -18,5 +29,5 @@
   <% end %>
 
   <p><%= link_to 'Gist Question', gist_test_passage_path(@test_passage), method: :post %></p>
-  <p><%= form.submit 'Next', class: 'btn btn-primary btn-sm' %></p>
+  <p><%= form.submit 'Next', class: 'btn btn-primary btn-sm next' %></p>
 <% end %>
