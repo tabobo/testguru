@@ -28,6 +28,10 @@ class TestPassage < ApplicationRecord
     save!
   end
 
+  def progress_bar_valuenow
+    test.questions.find_index(current_question) * 100 / test.questions.count
+  end
+
   private
 
   def before_validation_set_first_question

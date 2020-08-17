@@ -3,7 +3,7 @@
 <div id = "myProgress" >
   <%= content_tag(:div, "&nbsp;".html_safe, 
                   :id => "progress_bar", 
-                  'data-valuenow' => @test_passage.test.questions.find_index(@test_passage.current_question) * 100 / @test_passage.test.questions.count, 'aria_valuemin' => 0, 'aria_valuemax' => 100,
+                  'data-valuenow' => @test_passage.progress_bar_valuenow, 'aria_valuemin' => 0, 'aria_valuemax' => 100,
                   'role' => 'progressbar',
                   class: "progress-bar", 
                   style: "width: 1%") %>

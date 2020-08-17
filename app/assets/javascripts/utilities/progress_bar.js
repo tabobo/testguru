@@ -3,12 +3,4 @@ document.addEventListener('turbolinks:load', function() {
   var percent = progressBar.dataset.valuenow;
   document.querySelector(".progress-bar").style.width = percent + "%";
 })
-
-
-
-
-
-
-  
-
-  
+ 
