@@ -1,3 +1,16 @@
 // Place all the styles related to the test_passages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#myProgress {
+  position: relative;
+  width: 400px;
+  height: 30px;
+  background-color: #e4e4e4;
+}
+
+#progressbar {
+  width: 0%;
+  height: 30px;
+  background-color: #5980a7;
+  color: #fff;
+}

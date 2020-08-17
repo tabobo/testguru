@@ -85,6 +85,8 @@ ru:
         category: "Категория:"
         author: "Автор:"
         number_questions: "Количество вопросов:"
+      form_inline: 
+        submit: "Ok"
     questions:
       show:
         header: "вопрос"
