@@ -66,7 +66,7 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "test-guru_#{Rails.env}"
 
   config.action_mailer.perform_caching = false
-  config.action_mailer.default_url_options = { host: 'testguru-tabobo.herokuapp.com/' }
+  config.action_mailer.default_url_options = { host: 'testguru-tabobo.herokuapp.com' }
   config.action_mailer.delivery_method = :mailgun
   config.action_mailer.mailgun_settings = {
     api_key: '2999811ff6126f63aa1c389a4b850ccd-e438c741-756b3054',
