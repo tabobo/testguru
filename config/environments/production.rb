@@ -67,14 +67,10 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
   config.action_mailer.default_url_options = { host: 'testguru-tabobo.herokuapp.com' }
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    address:         'smtp.gmail.com',
-    port:            587,
-    user_name:       ENV['SMTP_USERNAME'],
-    password:        ENV['SMTP_PASSWORD'],
-    authentication:  'plain',
-    enable_starttls_auto: true
+  config.action_mailer.delivery_method = :mailgun
+  config.action_mailer.mailgun_settings = {
+    api_key: '2999811ff6126f63aa1c389a4b850ccd-e438c741-756b3054',
+    domain: 'sandboxb6e0b02bbc2e4f3a9d2d54a3293963d5.mailgun.org'
   }
 
   # Ignore bad email addresses and do not raise email delivery errors.

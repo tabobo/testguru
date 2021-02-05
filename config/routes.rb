@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get 'sessions/new'
   get 'users/new'
   root 'tests#index'
+  
+  resources :messages, only: %i[new create]
 
   resources :tests, only: :index do
     member do
