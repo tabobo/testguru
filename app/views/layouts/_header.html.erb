@@ -4,7 +4,7 @@
   <span class="navbar-text">
     <% if user_signed_in? %>
       Welcome, <b><%= current_user.first_name %> <%= current_user.last_name %></b> Guru   |  
-      <%= link_to 'Контакты', root_path %> |
+      <%= link_to 'Контакты', new_message_path %> |
       <%= link_to t('layouts.header.actions.home'), root_path %> | 
       <%= link_to t('layouts.header.actions.logout'), destroy_user_session_path, method: :delete %> |
       <% if current_user.admin? %>
