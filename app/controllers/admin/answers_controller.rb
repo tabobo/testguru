@@ -15,11 +15,16 @@ class Admin::AnswersController < Admin::BaseController
   def create
     @answer = @question.answers.new(answer_params)
 
-    if @answer.save
-      redirect_to admin_question_path(@answer), notice: 'Answer was successfully created.'
-    else
-      render :new
+    respond_to do |format|
+      if @answer.save
+        format.html { redirect_to admin_question_path(@question), notice: 'Answer was successfully created.' }
+        format.json { render :show, status: :created, location: @question }
+      else
+        format.html { render :new }
+        format.json { render json: @answer.errors, status: :unprocessable_entity }
+      end
     end
+
   end
 
   def update
