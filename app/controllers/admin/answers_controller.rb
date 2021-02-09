@@ -16,7 +16,7 @@ class Admin::AnswersController < Admin::BaseController
     @answer = @question.answers.new(answer_params)
 
     if @answer.save
-      redirect_to @answer, notice: 'Answer was successfully created.'
+      redirect_to admin_question_pat(@answer), notice: 'Answer was successfully created.'
     else
       render :new
     end
