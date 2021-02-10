@@ -29,7 +29,7 @@ class TestPassage < ApplicationRecord
   end
 
   def progress_bar_valuenow
-    test.questions.find_index(current_question) * 100 / test.questions.count
+      test.questions.find_index(current_question) * 100 / test.questions.count
   end
 
   private
