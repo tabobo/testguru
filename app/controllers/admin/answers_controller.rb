@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Admin::AnswersController < Admin::BaseController
-  before_action :find_question, only: %i[new create]
+  before_action :set_question, only: %i[new create]
   before_action :set_answer, only: %i[show edit update destroy]
 
   def show; end
@@ -29,20 +29,24 @@ class Admin::AnswersController < Admin::BaseController
 
   def update
     if @answer.update(answer_params)
-      redirect_to admin_question_path(@answer), notice: 'Answer was successfully updated.'
+      redirect_to admin_answer_path(@answer), notice: 'Answer was successfully updated.'
     else
       render :edit
     end
   end
 
   def destroy
-    @answer.destroy
-    redirect_to @answer.question, notice: 'Answer was successfully destroyed.'
+    question = @answer.question    
+    @answer.destroy    
+    respond_to do |format|
+      format.html { redirect_to admin_question_path(question), notice: 'Answer was successfully destroyed.' }
+      format.json { head :no_content }
+    end
   end
 
   private
 
-  def find_question
+  def set_question
     @question = Question.find(params[:question_id])
   end
 
