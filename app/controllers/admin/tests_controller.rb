@@ -44,7 +44,9 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def destroy
-    @test.destroy
+    unless @test.destroy
+      flash[:notice] = @test.errors.full_messages[0]
+    end
     redirect_to admin_tests_path
   end
 
