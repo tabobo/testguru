@@ -29,7 +29,7 @@ class TestPassage < ApplicationRecord
   end
 
   def progress_bar_valuenow
-    test.questions.find_index(current_question) * 100 / test.questions.count
+      test.questions.find_index(current_question) * 100 / test.questions.count
   end
 
   private
@@ -42,7 +42,7 @@ class TestPassage < ApplicationRecord
     correct_answers_count = correct_answers.count
 
     (correct_answers.count == correct_answers.where(id: answer_ids).count) &&
-      correct_answers.count == answer_ids.count
+      correct_answers.count == answer_ids.count unless answer_ids.nil?
   end
 
   def correct_answers
